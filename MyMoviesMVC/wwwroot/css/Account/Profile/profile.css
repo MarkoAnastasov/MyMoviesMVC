@@ -1,0 +1,112 @@
+﻿#profile {
+    background-color: #0e0e0e;
+}
+
+#profile-info {
+    color: #529ebb;
+    text-align: center;
+}
+
+
+#profile-info img{
+    width: 220px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#update-actions {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
+
+.update-box {
+    border: 1px solid #529ebb;
+    border-radius: 2px;
+    padding: 10px 70px;
+    margin: 10px;
+    background-color: #375763;
+}
+
+.update-box h4 {
+    color: #1a1919;
+    margin-bottom: 10px;
+}
+
+.account-inputs input, .account-button input {
+    border: 0px;
+    font-size: 17px;
+}
+
+.update-box input:focus {
+    outline: 0;
+}
+
+.account-button input {
+    border-radius: 2px;
+    padding: 5px 20px;
+    background-color: #529ebb;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.account-inputs {
+    display: flex;
+    flex-flow: column;
+}
+
+.account-inputs input {
+    padding: 5px 3px;
+    background-color: #313131;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    color: #529ebb;
+    width: 200px;
+}
+
+.account-inputs label {
+    color: #1a1919;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.account-inputs input:focus {
+    background-color: #484848;
+}
+
+.note {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #000000;
+}
+
+.alert {
+    width: 200px;
+    color: #670505;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 470px) {
+    #profile-info img {
+        width: 150px;
+    }
+
+    .update-box{
+        padding: 10px 20px;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .account-button input:hover{
+        background-color: #89c2d8;
+        cursor: pointer;
+    }
+}

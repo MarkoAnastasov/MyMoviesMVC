@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AssemblyName>MyMoviesMVC.Repositories</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyMoviesMVC.Interfaces\MyMoviesMVC.Interfaces.csproj" />
+    <ProjectReference Include="..\MyMoviesMVC.Models\MyMoviesMVC.Models.csproj" />
+  </ItemGroup>
+
+</Project>

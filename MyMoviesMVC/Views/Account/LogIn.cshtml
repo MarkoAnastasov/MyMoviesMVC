@@ -1,0 +1,43 @@
+﻿@model MyMoviesMVC.ModelsDTO.Account.LoginDTO
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{ 
+    Layout = "_AccountLayout";
+    ViewData["Title"] = "Log In";
+}
+
+<div id="account-form">
+    <h2>Log In</h2>
+    <form asp-controller="Account" asp-action="LogIn" method="post">
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/user.png" alt="user" />
+            </div>
+            <input asp-for="Email" type="email" placeholder="E-mail" maxlength="25" required />
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/password.png" alt="lock" />
+            </div>
+            <input asp-for="Password" type="password" placeholder="Password" maxlength="20" required />
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div id="account-checkbox">
+            <input asp-for="StayLoggedIn" type="checkbox" />
+            <label asp-for="StayLoggedIn">Stay logged in</label>
+        </div>
+        <div id="summary-errors" asp-validation-summary="ModelOnly"></div>
+        <div id="account-button">
+            <input type="submit" value="Log In" />
+        </div>
+    </form>
+    <div id="redirect-action">
+        <p>Don't have an account? <a asp-controller="Account" asp-action="Register">Register now</a></p>
+    </div>
+</div>

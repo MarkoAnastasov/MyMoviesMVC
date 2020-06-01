@@ -1,0 +1,151 @@
+﻿#movie-navbar {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: 1px solid #529ebb;
+    border-radius: 5px;
+}
+
+#all-movies {
+    background-color: #529ebb;
+    color: #0e0e0e;
+}
+
+#favourite-movies {
+    color: #529ebb;
+}
+
+#watched-movies {
+    color: #529ebb;
+    border-right: 0px;
+}
+
+.nav-item {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-right: 1px solid #529ebb;
+    width: 140px;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#home {
+    background-color: #0e0e0e;
+}
+
+.movie-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 230px;
+    transition: 0.5s;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.movie-card img {
+   height: 100%;
+   border-radius: 2px;
+ }   
+
+.movie-span {
+    width: 260px;
+    height: 410px;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.movie-card:hover {
+    width: 100%;
+    transition: 0.5s;
+    box-shadow: 0px 0px 3px 1px rgb(0,0,0);
+}
+
+.movie-card:hover .overlay {
+    opacity: 1;
+    transition: 1s;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: #529ebb;
+    border-radius: 2px;
+}
+
+.text {
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text p {
+    text-align: left;
+    padding: 10px;
+}
+
+.movie-description {
+    margin-bottom: 15px;
+}
+
+.movie-link:link {
+    text-decoration: none;
+    color: white;
+    max-width: 100px;
+    margin: 0 auto;
+    background-color: #0026ff;
+    padding: 10px;
+    border-radius: 2px;
+}    
+
+.movie-link:visited {
+    text-decoration: none;
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    #container {
+        flex-flow: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .movie-link:link:hover {
+        background-color: #3c57e7;
+    }
+
+    .nav-item:hover {
+        cursor: pointer;
+    }
+}

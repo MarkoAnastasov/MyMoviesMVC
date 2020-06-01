@@ -1,0 +1,68 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.AspNetCore.Identity;
+@using MyMoviesMVC.Models;
+@inject UserManager<User> userManager;
+@{ 
+    var sessionUser = await userManager.GetUserAsync(User);
+    var profilePictureBase64 = Convert.ToBase64String(sessionUser.ProfilePicture);
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movies - @ViewData["Title"]</title>
+    <link href="~/css/Shared/Layout/style.css" rel="stylesheet" type="text/css" />
+    @RenderSection("Style", required: true)
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-width">
+            <a asp-controller="Movie" asp-action="Overview" class="logo-link">
+                <div id="logo">
+                    <img src="~/images/logo.png" alt="logo" />
+                    <p id="company">My Movies</p>
+                </div>
+            </a>
+            <div id="search-bar">
+                <form asp-controller="Movie" asp-action="Search" method="get">
+                    <input type="text" id="title" name="title" placeholder="Movie Title" maxlength="100" />
+                    <input id="search-button" type="submit" value="Find" />
+                </form>
+            </div>
+            <div id="active-user">
+                <div id="user-info-full">
+                    <h4>Welcome,</h4>
+                    <img src="data:image/*;base64,@profilePictureBase64" />
+                </div>
+                <div id="toggle-full-menu">
+                    <div id="user-actions-full">
+                        <a asp-controller="Movie" asp-action="Overview" class="header-links" id="home">Home</a>
+                        <a asp-controller="Account" asp-action="Profile" class="header-links" id="profile">Profile</a>
+                        @if (User.IsInRole("admin"))
+                         {
+                            <a asp-controller="Admin" asp-action="Overview" class="header-links" id="admin">Admin section</a>
+                         }
+                        <a asp-controller="Info" asp-action="Contact" class="header-links" id="contact">Contact Us</a>
+                        <form asp-controller="Account" asp-action="LogOut" method="post">
+                            <input id="log-out" type="submit" value="Log Out" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>   
+    <div id="footer">
+        <a asp-controller="Info" asp-action="Contact" class="header-links">Questions? Contact us.</a>
+        <h3>My Movies ©2020</h3>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/Shared/Layout/main.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

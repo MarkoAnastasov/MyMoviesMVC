@@ -1,0 +1,44 @@
+﻿@model MyMoviesMVC.ModelsDTO.Movie.AddMovieDTO
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Add";
+}
+
+@section Style {
+    <link href="~/css/Movies/Add/add.css" rel="stylesheet" type="text/css" />
+}
+
+<div id="add-movie-form">
+    <form asp-controller="Movie" asp-action="Add" method="post" enctype="multipart/form-data">
+        <div class="form-inputs">
+            <label asp-for="Title">Title:</label>
+            <input type="text" asp-for="Title" placeholder="Title" required maxlength="30" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-inputs">
+            <label>Genre:</label>
+            <select asp-for="Genre" asp-items="Html.GetEnumSelectList<MyMoviesMVC.Models.Enums.Genre>()">
+                
+            </select>
+        </div>
+        <div class="form-inputs">
+            <label>Cover Photo:</label>
+            <input asp-for="Cover" type="file" accept="image/*" required />
+            <span asp-validation-for="Cover"></span>
+        </div>
+        <div class="form-inputs">
+            <label asp-for="Description">Description:</label>
+            <textarea asp-for="Description" placeholder="Description" rows="5" required maxlength="300">  </textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <div id="validation-error" asp-validation-summary="ModelOnly">
+            
+        </div>
+        <div id="submit-form">
+            <input type="submit" value="Add" id="submit-button" />
+        </div>
+    </form>
+</div>

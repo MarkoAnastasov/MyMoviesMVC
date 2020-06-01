@@ -1,0 +1,133 @@
+﻿textarea {
+    resize: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#add-movie {
+    background-color: #0e0e0e;
+}
+
+#add-movie-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    background-color: #191919;
+    padding: 20px 0px;
+    border-radius: 2px;
+}
+
+#validation-error {
+    color: #ff0000;
+    font-size: 15px;
+}
+
+#add-movie-form label {
+    margin-bottom: 5px;
+    color: #529ebb;
+}
+
+#add-movie-form span {
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.form-inputs{
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.form-inputs input,textarea,select {
+    border: 0px;
+    padding: 5px 3px;
+    background-color: #313131;
+    border-radius: 2px;
+    font-size: 17px;
+    color: #529ebb;
+    width: 300px;
+}
+
+.form-inputs input,textarea,select:focus {
+    outline: 0;
+}
+
+#submit-button {
+    border: 0px;
+    border-radius: 2px;
+    padding: 5px 20px;
+    background-color: #529ebb;
+    color: #000000;
+}
+
+#submit-form input{
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 290px) {
+    .form-inputs input, textarea,select {
+        width: 170px;
+        font-size: 15px;
+    }
+
+    #add-movie-form label {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 290px) and (max-width: 470px) {
+    .form-inputs input, textarea,select {
+        width: 250px;
+        font-size: 15px;
+    }
+
+    #add-movie-form label {
+        font-size: 16px;
+    }
+
+    #submit-button {
+        padding: 7px;
+    }
+
+    #add-movie-form span {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 470px) and (max-width: 750px) {
+    .form-inputs input, textarea,select {
+        width: 280px;
+        font-size: 15px;
+    }
+}
+
+
+@media only screen and (max-width: 750px) {
+    #content {
+        padding-bottom: 200px;
+    }
+
+    #submit-button {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    #submit-button:hover {
+        background-color: #89c2d8;
+        cursor: pointer;
+    }
+
+    #add-movie-form {
+        width: 700px;
+    }
+}

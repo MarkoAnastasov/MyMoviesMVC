@@ -1,0 +1,86 @@
+﻿@model MyMoviesMVC.ModelsDTO.User.UserMainDTO
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Profile";
+}
+
+@section Style{
+    <link href="~/css/Account/Profile/profile.css" rel="stylesheet" type="text/css"/>
+}
+
+<div id="profile-info">
+    <img src="data:image/*;base64,@Model.ProfilePicture" />
+    <h3>@Model.FirstName @Model.LastName</h3>
+    <div id="update-actions">
+        <div id="profile-presonal-info" class="update-box">
+            <h4>Personal Info</h4>
+            <form asp-controller="Account" asp-action="UpdatePersonalInfo" method="post" enctype="multipart/form-data">
+                <div class="account-inputs">
+                    <label>First Name:</label>
+                    <input type="text" name="FirstName" value="@Model.FirstName" placeholder="First Name" maxlength="20" required/>
+                </div>
+                <div class="account-inputs">
+                    <label>Last Name:</label>
+                    <input type="text" name="LastName" value="@Model.LastName" placeholder="Last Name" maxlength="20" required/>
+                </div>
+                <div class="account-inputs">
+                    <label>Profile Picture:</label>
+                    <input type="file" name="ProfilePicture" accept="image/*" id="upload-picture"/>
+                </div>
+                <div class="note">
+                    <p>*Profile picture is optional.</p>
+                </div>
+                <div class="account-button">
+                    <input type="submit" value="Update" />
+                </div>
+            </form>
+            <div class="alert">
+               @if (ViewData["UpdateErrors"] != null)
+                {
+                    foreach (var error in ViewData["UpdateErrors"] as IEnumerable<string>)
+                    {
+                        <p>@error</p>
+                    }
+                }
+            </div>
+        </div>
+        <div id="profile-presonal-info" class="update-box">
+            <h4>Change Password</h4>
+            <form asp-controller="Account" asp-action="ChangePassword" method="post">
+                <div class="account-inputs">
+                    <label>Old password:</label>
+                    <input type="password" name="OldPassword" placeholder="Old Password" maxlength="20" required />
+                </div>
+                <div class="account-inputs">
+                    <label>New password:</label>
+                    <input type="password" name="NewPassword" placeholder="New Password" maxlength="20" required />
+                </div>
+                <div class="account-inputs">
+                    <label>Confirm new password:</label>
+                    <input type="password" name="ConfirmPassword" placeholder="Confirm New Password" maxlength="20" required />
+                </div>
+                <div class="note">
+                    <p>*All fields are required.</p>
+                </div>
+                <div class="account-button">
+                    <input type="submit" value="Change" />
+                </div>
+            </form>
+            <div class="alert">
+               @if (ViewData["PasswordErrors"] != null)
+                {
+                    foreach (var passError in ViewData["PasswordErrors"] as IEnumerable<string>)
+                    {
+                        <p>@passError</p>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script src="~/js/Account/Profile/profile.js"></script>
+}

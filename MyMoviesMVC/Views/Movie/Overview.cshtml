@@ -1,0 +1,30 @@
+﻿@model List<MyMoviesMVC.ModelsDTO.Movie.MovieMainDTO>;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Overview";
+}
+
+@section Style{
+    <link href="~/css/Movies/Overview/overview.css" rel="stylesheet" type="text/css" />
+}
+
+<div id="movie-navbar">
+    <div class="nav-item" id="all-movies">
+        <p>All movies</p>
+    </div>
+    <div class="nav-item" id="favourite-movies">
+        <p>Favourite</p>
+    </div>
+    <div class="nav-item" id="watched-movies">
+        <p>Watched</p>
+    </div>
+</div>
+
+<div id="container">
+   @foreach (var movie in Model)
+    {
+        <partial name="_DisplayMoviePartial" model="movie" />
+    }
+</div>

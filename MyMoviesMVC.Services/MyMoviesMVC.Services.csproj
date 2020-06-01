@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyMoviesMVC.Common\MyMoviesMVC.Common.csproj" />
+    <ProjectReference Include="..\MyMoviesMVC.ModelsDTO\MyMoviesMVC.ModelsDTO.csproj" />
+    <ProjectReference Include="..\MyMoviesMVC.Repositories\MyMoviesMVC.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

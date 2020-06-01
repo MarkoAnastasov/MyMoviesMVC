@@ -1,0 +1,73 @@
+﻿@model MyMoviesMVC.ModelsDTO.Account.RegisterDTO
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_AccountLayout";
+    ViewData["Title"] = "Register";
+}
+
+<div id="account-form">
+    <h2>Register</h2>
+    <form asp-controller="Account" asp-action="Register" method="post" enctype="multipart/form-data">
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/user.png" alt="user" />
+            </div>
+            <input asp-for="FirstName" placeholder="First Name" maxlength="20" required />
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/user.png" alt="user" />
+            </div>
+            <input asp-for="LastName" placeholder="Last Name" maxlength="20" required/>
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/email-register.png" alt="email"/>
+            </div>
+            <input asp-for="Email" type="email" placeholder="E-mail" maxlength="25" required/>
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/password.png" alt="lock" />
+            </div>
+            <input asp-for="Password" type="password" placeholder="Password" maxlength="20" required/>
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="account-inputs">
+            <div class="input-icon">
+                <img src="~/images/password.png" alt="lock" />
+            </div>
+            <input asp-for="ConfirmPassword" type="password" placeholder="Confirm password" maxlength="20" required/>
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <div id="profile-picture">
+            <h3>Profile picture:</h3>
+            <input id="upload-picture" asp-for="ProfilePicture" type="file" accept="image/*" required/>
+        </div>
+        <div class="form-validation">
+            <span asp-validation-for="ProfilePicture"></span>
+        </div>
+        <div id="summary-errors" asp-validation-summary="ModelOnly"></div>
+        <div id="account-button">
+            <input type="submit" name="name" value="Register" />
+        </div>
+    </form>
+    <div id="redirect-action">
+        <p>Already have an account? <a asp-controller="Account" asp-action="LogIn">Log In</a></p>
+    </div>
+</div>
