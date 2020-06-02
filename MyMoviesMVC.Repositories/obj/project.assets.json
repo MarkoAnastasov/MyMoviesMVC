@@ -5918,11 +5918,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Repositories\\MyMoviesMVC.Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Repositories\\MyMoviesMVC.Repositories.csproj",
       "projectName": "MyMoviesMVC.Repositories",
-      "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Repositories\\MyMoviesMVC.Repositories.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Repositories\\MyMoviesMVC.Repositories.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Repositories\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5941,11 +5941,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj"
+            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj"
             },
-            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
+            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
             }
           }
         }

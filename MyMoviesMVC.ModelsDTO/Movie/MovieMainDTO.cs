@@ -15,6 +15,10 @@ namespace MyMoviesMVC.ModelsDTO.Movie
 
         public string Description { get; set; }
 
+        public bool IsFavourite { get; set; }
+
+        public bool IsWatched { get; set; }
+
         public virtual Genre Genre { get; set; }
     }
 }

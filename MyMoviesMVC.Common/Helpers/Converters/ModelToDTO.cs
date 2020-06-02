@@ -2,7 +2,6 @@
 using MyMoviesMVC.ModelsDTO.Movie;
 using MyMoviesMVC.ModelsDTO.User;
 using System;
-using System.Net.NetworkInformation;
 
 namespace MyMoviesMVC.Common.Helpers.Converters
 {
@@ -22,9 +21,9 @@ namespace MyMoviesMVC.Common.Helpers.Converters
             return mainMovieDTO;
         }
 
-        public static UserMainDTO UserToUserMainDTO(User user)
+        public static UserOverviewDTO UserToUserMainDTO(User user)
         {
-            var userMainDTO = new UserMainDTO()
+            var userMainDTO = new UserOverviewDTO()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,

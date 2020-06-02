@@ -8,16 +8,20 @@ namespace MyMoviesMVC.Interfaces
 {
     public interface IAccountService
     {
-        Task<bool> LogInUser(LoginDTO loginModel);
+        Task<bool> LogInUserAsync(LoginDTO loginModel);
 
-        Task LogOutUser();
+        Task LogOutUserAsync();
 
-        Task<List<string>> RegisterUser(RegisterDTO registerModel);
+        Task<List<string>> RegisterUserAsync(RegisterDTO registerModel);
 
-        Task<UserMainDTO> GetUserByClaim(ClaimsPrincipal sessionUser);
+        Task<UserOverviewDTO> GetUserByClaimAsync(ClaimsPrincipal sessionUser);
 
-        Task<List<string>> UpdatePersonalInfo(UpdatePersonalDTO personalDTO, ClaimsPrincipal sessionUser);
+        Task<List<string>> UpdatePersonalInfoAsync(UpdatePersonalDTO personalDTO, ClaimsPrincipal sessionUser);
 
-        Task<List<string>> ChangePassword(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser);
+        Task<List<string>> ChangePasswordAsync(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser);
+
+        Task<bool> AssignUserToAdminAsync(string userId);
+
+        Task<bool> UnAssignUserFromAdminAsync(string userId, ClaimsPrincipal sessionUser);
     }
 }

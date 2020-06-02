@@ -43,7 +43,7 @@
                         <a asp-controller="Account" asp-action="Profile" class="header-links" id="profile">Profile</a>
                         @if (User.IsInRole("admin"))
                          {
-                            <a asp-controller="Admin" asp-action="Overview" class="header-links" id="admin">Admin section</a>
+                            <a asp-controller="Admin" asp-action="AdminSection" class="header-links" id="admin">Admin section</a>
                          }
                         <a asp-controller="Info" asp-action="Contact" class="header-links" id="contact">Contact Us</a>
                         <form asp-controller="Account" asp-action="LogOut" method="post">

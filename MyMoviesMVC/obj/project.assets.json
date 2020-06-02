@@ -13150,11 +13150,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC\\MyMoviesMVC.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC\\MyMoviesMVC.csproj",
       "projectName": "MyMoviesMVC",
-      "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC\\MyMoviesMVC.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC\\MyMoviesMVC.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13173,11 +13173,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj"
+            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj"
             },
-            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Services\\MyMoviesMVC.Services.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Services\\MyMoviesMVC.Services.csproj"
+            "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Services\\MyMoviesMVC.Services.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Services\\MyMoviesMVC.Services.csproj"
             }
           }
         }

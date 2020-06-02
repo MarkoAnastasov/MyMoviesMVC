@@ -22,7 +22,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                var movies = await _movieService.GetAllMovies();
+                var movies = await _movieService.GetAllMoviesAsync();
 
                 return View(movies);
             }
@@ -38,7 +38,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                var movie = await _movieService.GetTargetMovie(id);
+                var movie = await _movieService.GetTargetMovieAsync(id);
 
                 return View(movie);
             }
@@ -61,12 +61,28 @@ namespace MyMoviesMVC.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
+        public IActionResult Remove()
+        {
+            try
+            {
+                return View();
+
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+
+        [HttpGet]
         [Route("search")]
         public async Task<IActionResult> Search(string title)
         {
             try
             {
-                var moviesList = await _movieService.SearchMoviesByTitle(title);
+                var moviesList = await _movieService.SearchMoviesByTitleAsync(title);
 
                 if (string.IsNullOrEmpty(title))
                 {
@@ -95,7 +111,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await _movieService.AddMovie(movieDTO);
+                    await _movieService.AddMovieAsync(movieDTO);
 
                     return RedirectToAction("Add");
                 }

@@ -19,7 +19,8 @@ namespace MyMoviesMVC.ModelsDTO.Account
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(20)]
+        [MinLength(7,ErrorMessage = "Minimum length of password is 7 chars."),MaxLength(20)]
+        [RegularExpression(@"^((?=.*[a-z])(?=.*[A-Z])).+$", ErrorMessage = "The Password must contain at least one captial letter.")]
         public string Password { get; set; }
 
         [Required]

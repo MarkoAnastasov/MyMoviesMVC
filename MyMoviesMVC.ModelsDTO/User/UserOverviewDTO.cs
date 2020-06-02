@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyMoviesMVC.ModelsDTO.User
 {
-    public class UserMainDTO
+    public class UserOverviewDTO
     {
         public string FirstName { get; set; }
 

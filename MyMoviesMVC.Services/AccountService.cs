@@ -22,7 +22,7 @@ namespace MyMoviesMVC.Services
             _signInManager = signInManager;
         }
 
-        public async Task<bool> LogInUser(LoginDTO loginModel)
+        public async Task<bool> LogInUserAsync(LoginDTO loginModel)
         {
             var user = await _userManager.FindByEmailAsync(loginModel.Email);
 
@@ -41,12 +41,12 @@ namespace MyMoviesMVC.Services
             return false;
         }
 
-        public async Task LogOutUser()
+        public async Task LogOutUserAsync()
         {
             await _signInManager.SignOutAsync();
         }
 
-        public async Task<List<string>> RegisterUser(RegisterDTO registerDTO)
+        public async Task<List<string>> RegisterUserAsync(RegisterDTO registerDTO)
         {
             var newUser = await DTOToModel.RegisterDTOToUser(registerDTO);
 
@@ -62,7 +62,7 @@ namespace MyMoviesMVC.Services
             return ResponseErrors(response, errorList);
         }
 
-        public async Task<UserMainDTO> GetUserByClaim(ClaimsPrincipal sessionUser)
+        public async Task<UserOverviewDTO> GetUserByClaimAsync(ClaimsPrincipal sessionUser)
         {
             var targetUser = await _userManager.GetUserAsync(sessionUser);
 
@@ -74,7 +74,7 @@ namespace MyMoviesMVC.Services
             return ModelToDTO.UserToUserMainDTO(targetUser);
         }
 
-        public async Task<List<string>> UpdatePersonalInfo(UpdatePersonalDTO personalDTO, ClaimsPrincipal sessionUser)
+        public async Task<List<string>> UpdatePersonalInfoAsync(UpdatePersonalDTO personalDTO, ClaimsPrincipal sessionUser)
         {
             var targetUser = await _userManager.GetUserAsync(sessionUser);
 
@@ -97,7 +97,7 @@ namespace MyMoviesMVC.Services
             return ResponseErrors(response, errorList);
         }
 
-        public async Task<List<string>> ChangePassword(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser)
+        public async Task<List<string>> ChangePasswordAsync(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser)
         {
             var targetUser = await _userManager.GetUserAsync(sessionUser);
 
@@ -116,6 +116,65 @@ namespace MyMoviesMVC.Services
             }
 
             return ResponseErrors(response, errorList);
+        }
+
+        public async Task<bool> AssignUserToAdminAsync(string userId)
+        {
+            var targetUser = await _userManager.FindByIdAsync(userId);
+
+            if(targetUser == null)
+            {
+                throw new FlowException("User not found!");
+            }
+
+            var isAdmin = await _userManager.IsInRoleAsync(targetUser, "admin");
+
+            if(isAdmin)
+            {
+                throw new FlowException("User already admin!");
+            }
+
+            var response = await _userManager.AddToRoleAsync(targetUser, "admin");
+
+            if (response.Succeeded)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> UnAssignUserFromAdminAsync(string userId,ClaimsPrincipal sessionUser)
+        {
+            var targetUser = await _userManager.FindByIdAsync(userId);
+
+            if (targetUser == null)
+            {
+                throw new FlowException("User not found!");
+            }
+
+            var currentUser = await _userManager.GetUserAsync(sessionUser);
+
+            if(targetUser.Id == currentUser.Id)
+            {
+                throw new FlowException("You can't unassign yourself!");
+            }
+
+            var isAdmin = await _userManager.IsInRoleAsync(targetUser, "admin");
+
+            if (!isAdmin)
+            {
+                throw new FlowException("User not an admin!");
+            }
+
+            var response = await _userManager.RemoveFromRoleAsync(targetUser, "admin");
+
+            if (response.Succeeded)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private static List<string> ResponseErrors(IdentityResult response, List<string> errorList)

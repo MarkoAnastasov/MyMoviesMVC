@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {}
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj",
         "projectName": "MyMoviesMVC.Interfaces",
-        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\MyMoviesMVC.Interfaces.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Interfaces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj"
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj"
               },
-              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj": {
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj",
         "projectName": "MyMoviesMVC.ModelsDTO",
-        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\MyMoviesMVC.ModelsDTO.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.ModelsDTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -95,8 +95,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
+              "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj"
               }
             }
           }
@@ -135,14 +135,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
+    "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj",
         "projectName": "MyMoviesMVC.Models",
-        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\MyMoviesMVC.Models.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\backend\\MovieAppMVC\\MyMoviesMVC\\MyMoviesMVC.Models\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Marko\\Code Academy\\MyMoviesMVCgit\\MyMoviesMVC\\MyMoviesMVC.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

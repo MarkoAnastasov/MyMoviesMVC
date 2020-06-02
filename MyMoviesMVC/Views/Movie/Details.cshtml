@@ -1,4 +1,5 @@
 ﻿@model MyMoviesMVC.ModelsDTO.Movie.MovieMainDTO;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{ 
     Layout = "_Layout";
@@ -17,4 +18,11 @@
         <p>@Model.Genre</p>
     </div>
     <p>@Model.Description</p>
+    @if (User.IsInRole("admin"))
+     {
+        <div id="movie-action">
+            <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+            <a asp-controller="Movie" asp-action="Remove" asp-route-id="@Model.Id">Remove</a>
+        </div>
+     }
 </div>

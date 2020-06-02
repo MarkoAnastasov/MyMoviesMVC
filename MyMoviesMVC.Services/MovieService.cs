@@ -17,14 +17,14 @@ namespace MyMoviesMVC.Services
             _movieRepository = movieRepository;
         }
 
-        public async Task<List<MovieMainDTO>> GetAllMovies()
+        public async Task<List<MovieMainDTO>> GetAllMoviesAsync()
         {
             var moviesList = await _movieRepository.GetAllAsync();
 
             return moviesList.Select(x => ModelToDTO.MovieToMovieMainDTO(x)).ToList();
         }
 
-        public async Task<MovieMainDTO> GetTargetMovie(int id)
+        public async Task<MovieMainDTO> GetTargetMovieAsync(int id)
         {
             var targetMovie = await _movieRepository.GetFirstWhereAsync(x => x.Id == id);
 
@@ -36,7 +36,7 @@ namespace MyMoviesMVC.Services
             return ModelToDTO.MovieToMovieMainDTO(targetMovie);
         }
 
-        public async Task<List<MovieMainDTO>> SearchMoviesByTitle(string title)
+        public async Task<List<MovieMainDTO>> SearchMoviesByTitleAsync(string title)
         {
             if (string.IsNullOrEmpty(title))
             {
@@ -53,7 +53,7 @@ namespace MyMoviesMVC.Services
             return targetMovies.Select(x => ModelToDTO.MovieToMovieMainDTO(x)).ToList();
         }
 
-        public async Task AddMovie(AddMovieDTO movieDTO)
+        public async Task AddMovieAsync(AddMovieDTO movieDTO)
         {
             var existingMovie = await _movieRepository.GetFirstWhereAsync(x => x.Title.ToUpper() == movieDTO.Title.Trim().ToUpper());
 

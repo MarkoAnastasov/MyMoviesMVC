@@ -22,9 +22,21 @@
     </div>
 </div>
 
-<div id="container">
+<div id="all-container" class="container">
    @foreach (var movie in Model)
     {
         <partial name="_DisplayMoviePartial" model="movie" />
     }
 </div>
+
+<div id="favourite-container" class="container" style="display:none">
+
+</div>
+
+<div id="watched-container" class="container" style="display:none">
+
+</div>
+
+@section Scripts{ 
+    <script src="~/js/Movies/Overview/overview.js"></script>
+}

@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\js\Movies\Add\" />
   </ItemGroup>
 
   <ItemGroup>

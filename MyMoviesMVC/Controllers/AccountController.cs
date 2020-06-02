@@ -6,6 +6,7 @@ using MyMoviesMVC.Interfaces;
 using MyMoviesMVC.ModelsDTO.Account;
 using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Controllers
@@ -67,7 +68,7 @@ namespace MyMoviesMVC.Controllers
             {
                 var sessionUser = User;
 
-                var userMainDTO = await _accountService.GetUserByClaim(sessionUser);
+                var userMainDTO = await _accountService.GetUserByClaimAsync(sessionUser);
 
                 if(TempData["UpdateUserErrors"] != null)
                 {
@@ -100,7 +101,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var succeed = await _accountService.LogInUser(loginModel);
+                    var succeed = await _accountService.LogInUserAsync(loginModel);
 
                     if (succeed)
                     {
@@ -125,7 +126,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                await _accountService.LogOutUser();
+                await _accountService.LogOutUserAsync();
 
                 return RedirectToAction("LogIn");
 
@@ -146,7 +147,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var responseList = await _accountService.RegisterUser(registerModel);
+                    var responseList = await _accountService.RegisterUserAsync(registerModel);
 
                     if (!responseList.Any())
                     {
@@ -172,9 +173,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var sessionUser = User;
-
-                    var responseList = await _accountService.UpdatePersonalInfo(personalDTO, sessionUser);
+                    var responseList = await _accountService.UpdatePersonalInfoAsync(personalDTO, User);
 
                     if (!responseList.Any())
                     {
@@ -208,9 +207,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var sessionUser = User;
-
-                    var responseList = await _accountService.ChangePassword(changePasswordDTO, sessionUser);
+                    var responseList = await _accountService.ChangePasswordAsync(changePasswordDTO, User);
 
                     if (!responseList.Any())
                     {
@@ -229,6 +226,66 @@ namespace MyMoviesMVC.Controllers
                 TempData["PasswordChangeErrors"] = ex.Message;
 
                 return RedirectToAction("Profile");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AssignUserToAdmin(string userId)
+        {
+            try
+            {
+                var succeed = await _accountService.AssignUserToAdminAsync(userId);
+
+                if (succeed)
+                {
+                    return RedirectToAction("AdminSection", "Admin");
+                }
+
+                TempData["AssignAdminError"] = "An error has occured!";
+
+                return RedirectToAction("AdminSection", "Admin");
+            }
+            catch (FlowException ex)
+            {
+                TempData["AssignAdminError"] = ex.Message;
+
+                return RedirectToAction("AdminSection", "Admin");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> UnAssignUserFromAdmin(string userId)
+        {
+            try
+            {
+                var succeed = await _accountService.UnAssignUserFromAdminAsync(userId,User);
+
+                if (succeed)
+                {
+                    return RedirectToAction("AdminSection", "Admin");
+                }
+
+                TempData["UnAssignAdminError"] = "An error has occured!";
+
+                return RedirectToAction("AdminSection", "Admin");
+            }
+            catch (FlowException ex)
+            {
+                TempData["UnAssignAdminError"] = ex.Message;
+
+                return RedirectToAction("AdminSection", "Admin");
             }
             catch (Exception)
             {

@@ -5,13 +5,13 @@
     max-width: 400px;
     margin: 0 auto;
     margin-bottom: 30px;
-    border: 1px solid #529ebb;
     border-radius: 5px;
 }
 
 #all-movies {
     background-color: #529ebb;
     color: #0e0e0e;
+    border-radius: 3px 0px 0px 3px;
 }
 
 #favourite-movies {
@@ -20,18 +20,20 @@
 
 #watched-movies {
     color: #529ebb;
-    border-right: 0px;
+    border-right: 1px solid #529ebb;
+    border-radius: 0px 3px 3px 0px;
 }
 
 .nav-item {
     padding: 10px 20px;
     font-size: 20px;
-    border-right: 1px solid #529ebb;
     width: 140px;
+    border: 1px solid #529ebb;
+    border-right: 0px;
     text-align: center;
 }
 
-#container {
+.container {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
@@ -134,9 +136,15 @@
 }
 
 @media only screen and (max-width: 700px) {
-    #container {
+    .container {
         flex-flow: column;
         align-items: center;
+    }
+
+    .nav-item {
+        width: 80px;
+        padding: 3px 6px;
+        font-size: 14px;
     }
 }
 

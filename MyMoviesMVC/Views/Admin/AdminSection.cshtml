@@ -1,0 +1,60 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{ 
+    Layout = "_Layout";
+    ViewData["Title"] = "Admin";
+}
+
+@section Style {
+    <link href="~/css/Admin/Admin Section/adminsection.css" rel="stylesheet" type="text/css"/>
+}
+
+<div class="section-title">
+    <h3>Movies</h3>
+</div>
+
+<div id="movies-section" class="section">
+    <a asp-controller="Movie" asp-action="Add">Add movie</a>
+    <p class="note">*Edit and Remove actions can be accessed at movie details action.</p>
+</div>
+
+<div class="section-title">
+    <h3>Users</h3>
+</div>
+
+<div id="users-section" class="section">
+    <div id="assing-admin" class="assignment">
+        <form asp-controller="Account" asp-action="AssignUserToAdmin" method="post">
+            <div class="admin-inputs">
+                <label>Assign admin:</label>
+                <input type="text" name="userId" required placeholder="User ID" />
+            </div>
+            <div class="admin-submit">
+                <input type="submit" name="name" value="Assign" />
+            </div>
+        </form>
+        <div class="assignment-error">
+            @if(ViewData["AssignError"] != null)
+             {
+                <p>@ViewData["AssignError"].ToString()</p>
+             }
+        </div>
+    </div>
+    <div id="unassign-admin" class="assignment">
+        <form asp-controller="Account" asp-action="UnAssignUserFromAdmin" method="post">
+            <div class="admin-inputs">
+                <label>Unassign admin:</label>
+                <input type="text" name="userId" required placeholder="User ID" />
+            </div>
+            <div class="admin-submit">
+                <input type="submit" name="name" value="Unassign" />
+            </div>
+        </form>
+        <div class="assignment-error">
+            @if (ViewData["UnAssignError"] != null)
+             {
+                <p>@ViewData["UnAssignError"].ToString()</p>
+             }
+        </div>
+    </div>
+</div>

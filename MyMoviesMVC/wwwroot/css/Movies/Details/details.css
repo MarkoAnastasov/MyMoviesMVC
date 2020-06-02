@@ -39,6 +39,24 @@
     color: #ff6a00;
 }
 
+#movie-action {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#movie-action a:link, #movie-action a:visited {
+    text-decoration: none;
+    color: #0e0e0e;
+    background-color: #529ebb;
+    padding: 5px 20px;
+    border-radius: 2px;
+    margin: 5px;
+}
+
 @media only screen and (max-width: 390px) {
     #movie-info img {
         width: 85%;
@@ -48,8 +66,8 @@
         width: 90%;
     }
 
-    #movie-info h1 {
-        font-size: 25px;
+    #movie-info h2 {
+        font-size: 20px;
     }
 }
 
@@ -67,6 +85,12 @@
     #movie-info {
         border-top: 10px solid #529ebb;
         border-bottom: 10px solid #ff6a00;
+    }
+}
+
+@media only screen and (min-width: 750px){
+    #movie-action a:hover {
+        background-color: #89c2d8;
     }
 }
 

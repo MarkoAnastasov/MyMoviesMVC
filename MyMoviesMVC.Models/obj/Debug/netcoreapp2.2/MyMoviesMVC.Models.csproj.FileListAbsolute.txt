@@ -10,3 +10,15 @@ C:\Users\User\Desktop\Marko\Code Academy\backend\MovieAppMVC\MyMoviesMVC\MyMovie
 C:\Users\User\Desktop\Marko\Code Academy\backend\MovieAppMVC\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.runtimeconfig.dev.json
 C:\Users\User\Desktop\Marko\Code Academy\backend\MovieAppMVC\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.genruntimeconfig.cache
 C:\Users\User\Desktop\Marko\Code Academy\backend\MovieAppMVC\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.deps.json
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.runtimeconfig.json
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.runtimeconfig.dev.json
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.dll
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.pdb
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.AssemblyInfo.cs
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.dll
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.pdb
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Models\obj\Debug\netcoreapp2.2\MyMoviesMVC.Models.genruntimeconfig.cache
