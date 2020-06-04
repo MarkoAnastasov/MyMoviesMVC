@@ -18,33 +18,18 @@ namespace MyMoviesMVC.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Overview()
-        {
-            try
-            {
-                var movies = await _movieService.GetAllMoviesAsync();
-
-                return View(movies);
-            }
-            catch (Exception)
-            {
-                return StatusCode(500);
-            }
-        }
-
-        [HttpGet]
         [Route("movie/{id}")]
         public async Task<IActionResult> Details(int id)
         {
             try
             {
-                var movie = await _movieService.GetTargetMovieAsync(id);
+                var movieMainDTO = await _movieService.GetTargetMovieAsync(id);
 
-                return View(movie);
+                return View(movieMainDTO);
             }
             catch (FlowException)
             {
-                return RedirectToAction("Overview");
+                return RedirectToAction("UserMovies", "UserCollections");
             }
             catch (Exception)
             {
@@ -61,13 +46,19 @@ namespace MyMoviesMVC.Controllers
         }
 
         [HttpGet]
+        [Route("editmovie/{id}")]
         [Authorize(Roles = "admin")]
-        public IActionResult Remove()
+        public async Task<IActionResult> Edit(int id)
         {
             try
             {
-                return View();
+                var editMovieDTO = await _movieService.FindMovieAndConvertToEdit(id);
 
+                return View(editMovieDTO);
+            }
+            catch (FlowException)
+            {
+                return RedirectToAction("UserMovies", "UserCollections");
             }
             catch (Exception)
             {
@@ -75,6 +66,26 @@ namespace MyMoviesMVC.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("removemovie/{id}")]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            try
+            {
+                await _movieService.RemoveMovieAsync(id);
+
+                return RedirectToAction("UserMovies", "UserCollections");
+            }
+            catch (FlowException)
+            {
+                return RedirectToAction("UserMovies", "UserCollections");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
 
         [HttpGet]
         [Route("search")]
@@ -105,24 +116,53 @@ namespace MyMoviesMVC.Controllers
         [Route("addmovie")]
         [Authorize(Roles = "admin")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add(AddMovieDTO movieDTO)
+        public async Task<IActionResult> Add(AddMovieDTO addMovieDTO)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await _movieService.AddMovieAsync(movieDTO);
+                    await _movieService.AddMovieAsync(addMovieDTO);
 
                     return RedirectToAction("Add");
                 }
 
-                return View(movieDTO);
+                return View(addMovieDTO);
             }
             catch (FlowException ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
 
-                return View(movieDTO);
+                return View(addMovieDTO);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        [Route("editmovie/{id}")]
+        [Authorize(Roles = "admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id,EditMovieDTO editMovieDTO)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _movieService.EditMovieAsync(id,editMovieDTO);
+
+                    return RedirectToAction("Details",id);
+                }
+
+                return View(editMovieDTO);
+            }
+            catch (FlowException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+
+                return View(editMovieDTO);
             }
             catch (Exception)
             {

@@ -29,7 +29,6 @@ namespace MyMoviesMVC.ModelsDTO.Account
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [DataType(DataType.Upload)]
         public IFormFile ProfilePicture { get; set; }
 
     }

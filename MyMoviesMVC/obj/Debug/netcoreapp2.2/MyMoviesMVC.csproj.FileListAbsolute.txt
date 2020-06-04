@@ -85,7 +85,6 @@ C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Info\Contact.cshtml.g.cs
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Movie\Add.cshtml.g.cs
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Movie\Details.cshtml.g.cs
-C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Movie\Overview.cshtml.g.cs
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Movie\Search.cshtml.g.cs
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AccountLayout.cshtml.g.cs
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_DisplayMoviePartial.cshtml.g.cs
@@ -99,3 +98,5 @@ C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\MyMoviesMVC.pdb
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\MyMoviesMVC.genruntimeconfig.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Admin\AdminSection.cshtml.g.cs
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\Movie\Edit.cshtml.g.cs
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC\obj\Debug\netcoreapp2.2\Razor\Views\UserCollections\UserMovies.cshtml.g.cs

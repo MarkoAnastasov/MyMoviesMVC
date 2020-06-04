@@ -9,7 +9,7 @@ namespace MyMoviesMVC.Models
     {
         public User()
         {
-            UserMovies = new HashSet<UserMovies>();
+            UserMovies = new List<UserMovies>();
         }
 
         [Required]
@@ -23,6 +23,6 @@ namespace MyMoviesMVC.Models
         [Required]
         public byte[] ProfilePicture { get; set; }
 
-        public virtual ICollection<UserMovies> UserMovies { get; set; }
+        public virtual List<UserMovies> UserMovies { get; set; }
     }
 }

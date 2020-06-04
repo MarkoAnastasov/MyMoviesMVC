@@ -15,6 +15,13 @@ namespace MyMoviesMVC.Models
         [Required]
         public int MovieId { get; set; }
 
+        [Required]
+        public bool IsFavourite { get; set; }
+
+        [Required]
+        public bool IsWatched { get; set; }
+
+
         public virtual User User { get; set; }
         public virtual Movie Movie { get; set; }
     }

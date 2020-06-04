@@ -15,8 +15,8 @@
     border-radius: 2px;
 }
 
-#movie-info p {
-    text-align:left;
+#movie-info img {
+    border-radius: 2px;
 }
 
 #movie-title, #movie-genre {
@@ -39,16 +39,20 @@
     color: #ff6a00;
 }
 
-#movie-action {
+#admin-action h4 {
+    margin-top: 10px;
+}
+
+#admin-section {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
     width: 40%;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
-#movie-action a:link, #movie-action a:visited {
+#admin-action a:link, #admin-action a:visited,.user-action-button {
     text-decoration: none;
     color: #0e0e0e;
     background-color: #529ebb;
@@ -57,8 +61,48 @@
     margin: 5px;
 }
 
-@media only screen and (max-width: 390px) {
-    #movie-info img {
+.user-action-button{
+    width: 100px;
+    text-align: center;
+}
+
+#user-section {
+    margin-top: 10px;
+}
+
+#loading-data {
+    height: 50px;
+    margin-top: 10px;
+}
+
+#loading-data img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+#user-actions-movie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: none;
+    margin-top: 10px;
+    align-items: center;
+    height: 50px;
+}
+
+#data-errors {
+    display: none;
+    margin-top: 10px;
+    color: #ff0000;
+    height: 20px;
+}
+
+#movie-description {
+    text-align: left;
+}
+
+@media only screen and (max-width: 450px) {
+    #movie-cover img {
         width: 85%;
     }
 
@@ -69,10 +113,19 @@
     #movie-info h2 {
         font-size: 20px;
     }
+
+    #user-actions-movie{
+        flex-flow: column;
+        height: 150px;
+    }
+
+    #loading-data img {
+        width: 30px;
+    }
 }
 
-@media only screen and (min-width: 390px) {
-    #movie-info img {
+@media only screen and (min-width: 450px) {
+    #movie-cover img {
         width: 220px;
     }
 
@@ -89,13 +142,14 @@
 }
 
 @media only screen and (min-width: 750px){
-    #movie-action a:hover {
+    #admin-action a:hover,.user-action-button:hover {
         background-color: #89c2d8;
+        cursor: pointer;
     }
 }
 
 @media only screen and (min-width: 840px) {
-    #movie-info img {
+    #movie-cover img {
         width: 300px;
     }
 

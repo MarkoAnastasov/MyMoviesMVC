@@ -11,18 +11,41 @@
 }
 
 <div id="movie-info">
-    <img src="data:image/*;base64,@Model.Cover" alt="@Model.Title" />
+    <div id="movie-cover">
+        <img src="data:image/*;base64,@Model.Cover" alt="@Model.Title" />
+    </div>
     <h2 id="movie-title">@Model.Title</h2>
     <div id="genre">
-        <h4 id="movie-genre">Genre:</h4> 
+        <h4 id="movie-genre">Genre:</h4>
         <p>@Model.Genre</p>
     </div>
-    <p>@Model.Description</p>
+    <p id="movie-description">@Model.Description</p>
     @if (User.IsInRole("admin"))
-     {
-        <div id="movie-action">
-            <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-            <a asp-controller="Movie" asp-action="Remove" asp-route-id="@Model.Id">Remove</a>
+    {
+        <div id="admin-action">
+            <h4>Admin section</h4>
+            <div id="admin-section">
+                <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                <a asp-controller="Movie" asp-action="Remove" asp-route-id="@Model.Id" onclick="return confirm(`Do you want to remove this movie?`)">Remove</a>
+            </div>
         </div>
-     }
+    }
+    <div id="user-section">
+        <h4>Manage movie for your watchlist</h4>
+        <div id="loading-data">
+            <input id="movie-id-input" type="hidden" value="@Model.Id" />
+            <img src="~/images/loader.gif" alt="loader" />
+        </div>
+        <div id="user-actions-movie">
+
+        </div>
+        <div id="data-errors">
+
+        </div>
+    </div>
 </div>
+
+@section Scripts {
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="~/js/Movies/Details/details.js"></script>
+}

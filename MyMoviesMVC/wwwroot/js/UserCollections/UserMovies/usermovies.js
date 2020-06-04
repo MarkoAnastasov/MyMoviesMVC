@@ -32,7 +32,7 @@
         $("#favourite-container").css("display", "none");
         $("#watched-container").css("display", "flex");
     });
-    
+
 }
 
 $(document).ready(function () {

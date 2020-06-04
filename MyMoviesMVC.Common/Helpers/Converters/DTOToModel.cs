@@ -1,6 +1,7 @@
 ﻿using MyMoviesMVC.Models;
 using MyMoviesMVC.ModelsDTO.Account;
 using MyMoviesMVC.ModelsDTO.Movie;
+using MyMoviesMVC.ModelsDTO.UserMovies;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Common.Helpers.Converters
@@ -9,7 +10,7 @@ namespace MyMoviesMVC.Common.Helpers.Converters
     {
         public static async Task<User> RegisterDTOToUser(RegisterDTO registerDTO)
         {
-            var newUser = new User()
+            return new User()
             {
                 FirstName = registerDTO.FirstName.Trim(),
                 LastName = registerDTO.LastName.Trim(),
@@ -17,19 +18,30 @@ namespace MyMoviesMVC.Common.Helpers.Converters
                 ProfilePicture = await FileToByteArray.ImageToByteArray(registerDTO.ProfilePicture),
                 UserName = registerDTO.Email + RandomString.GenerateRandomString(4)
             };
-
-            return newUser;
         }
 
-        public static async Task<Movie> AddMovieDTOToMovie(AddMovieDTO movieDTO)
+        public static async Task<Movie> AddMovieDTOToMovie(AddMovieDTO addMovieDTO)
         {
-            var movie = new Movie()
+            return new Movie()
             {
-                Title = movieDTO.Title.Trim(),
-                Description = movieDTO.Description.Trim(),
-                Genre = movieDTO.Genre,
-                Cover = await FileToByteArray.ImageToByteArray(movieDTO.Cover)
+                Title = addMovieDTO.Title.Trim(),
+                Description = addMovieDTO.Description.Trim(),
+                Genre = addMovieDTO.Genre,
+                Cover = await FileToByteArray.ImageToByteArray(addMovieDTO.Cover)
             };
+        }
+
+        public static async Task<Movie> EditMovieDTOToMovie(EditMovieDTO addMovieDTO, Movie movie)
+        {
+            movie.Title = addMovieDTO.Title.Trim();
+            movie.Description = addMovieDTO.Description.Trim();
+            movie.Genre = addMovieDTO.Genre;
+
+            if (addMovieDTO.Cover != null)
+            {
+                movie.Cover = await FileToByteArray.ImageToByteArray(addMovieDTO.Cover);
+
+            }
 
             return movie;
         }
@@ -45,6 +57,17 @@ namespace MyMoviesMVC.Common.Helpers.Converters
             }
 
             return user;
+        }
+
+        public static UserMovies AddUserMovieToUserMovie(int movieId, int userId)
+        {
+            return new UserMovies()
+            {
+                UserId = userId,
+                MovieId = movieId,
+                IsFavourite = false,
+                IsWatched = false
+            };
         }
     }
 }

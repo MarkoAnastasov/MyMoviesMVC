@@ -51,6 +51,9 @@ namespace MyMoviesMVC
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IMovieService, MovieService>();
+            services.AddScoped<IUserCollectionsRepository, UserCollectionsRepository>();
+            services.AddScoped<IUserCollectionsService, UserCollectionsService>();
+
 
             services.AddMvc(config =>
             {
@@ -90,7 +93,7 @@ namespace MyMoviesMVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Movie}/{action=Overview}");
+                    template: "{controller=UserCollections}/{action=UserMovies}");
             });
         }
     }

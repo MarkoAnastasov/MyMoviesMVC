@@ -19,14 +19,13 @@
             <span asp-validation-for="Title"></span>
         </div>
         <div class="form-inputs">
-            <label>Genre:</label>
+            <label asp-for="Genre">Genre:</label>
             <select asp-for="Genre" asp-items="Html.GetEnumSelectList<MyMoviesMVC.Models.Enums.Genre>()">
-                
             </select>
         </div>
         <div class="form-inputs">
             <label>Cover Photo:</label>
-            <input asp-for="Cover" type="file" accept="image/*" required />
+            <input id="upload-picture" asp-for="Cover" type="file" accept="image/*" required />
             <span asp-validation-for="Cover"></span>
         </div>
         <div class="form-inputs">
@@ -35,10 +34,14 @@
             <span asp-validation-for="Description"></span>
         </div>
         <div id="validation-error" asp-validation-summary="ModelOnly">
-            
+
         </div>
         <div id="submit-form">
             <input type="submit" value="Add" id="submit-button" />
         </div>
     </form>
 </div>
+
+@section Scripts{
+    <script src="~/js/Common/ImageValidator/imagevalidator.js"></script>
+}

@@ -7,12 +7,16 @@ namespace MyMoviesMVC.Interfaces
 {
     public interface IMovieService
     {
-        Task<List<MovieMainDTO>> GetAllMoviesAsync();
-
         Task<MovieMainDTO> GetTargetMovieAsync(int id);
 
         Task<List<MovieMainDTO>> SearchMoviesByTitleAsync(string title);
 
         Task AddMovieAsync(AddMovieDTO movieDTO);
+
+        Task<EditMovieDTO> FindMovieAndConvertToEdit(int id);
+
+        Task EditMovieAsync(int id,EditMovieDTO editMovieDTO);
+
+        Task RemoveMovieAsync(int id);
     }
 }

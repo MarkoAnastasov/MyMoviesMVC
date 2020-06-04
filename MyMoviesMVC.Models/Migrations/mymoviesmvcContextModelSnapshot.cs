@@ -185,6 +185,10 @@ namespace MyMoviesMVC.Models.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("IsFavourite");
+
+                    b.Property<bool>("IsWatched");
+
                     b.Property<int>("MovieId");
 
                     b.Property<int>("UserId");
@@ -271,7 +275,7 @@ namespace MyMoviesMVC.Models.Migrations
             modelBuilder.Entity("MyMoviesMVC.Models.UserMovies", b =>
                 {
                     b.HasOne("MyMoviesMVC.Models.Movie", "Movie")
-                        .WithMany()
+                        .WithMany("UserMovies")
                         .HasForeignKey("MovieId")
                         .OnDelete(DeleteBehavior.Cascade);
 

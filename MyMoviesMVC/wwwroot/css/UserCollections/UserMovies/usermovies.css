@@ -60,9 +60,9 @@
 }
 
 .movie-card img {
-   height: 100%;
-   border-radius: 2px;
- }   
+    height: 100%;
+    border-radius: 2px;
+}
 
 .movie-span {
     width: 260px;
@@ -128,11 +128,16 @@
     background-color: #0026ff;
     padding: 10px;
     border-radius: 2px;
-}    
+}
 
 .movie-link:visited {
     text-decoration: none;
     color: white;
+}
+
+.no-movies-found {
+    color: #529ebb;
+    margin-top: 70px;
 }
 
 @media only screen and (max-width: 700px) {

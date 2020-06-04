@@ -6,7 +6,6 @@ using MyMoviesMVC.Interfaces;
 using MyMoviesMVC.ModelsDTO.Account;
 using System;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Controllers
@@ -29,7 +28,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    return RedirectToAction("Overview", "Movie");
+                    return RedirectToAction("UserMovies", "UserCollections");
                 }
 
                 return View();
@@ -49,7 +48,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    return RedirectToAction("Overview", "Movie");
+                    return RedirectToAction("UserMovies", "UserCollections");
                 }
 
                 return View();
@@ -83,7 +82,7 @@ namespace MyMoviesMVC.Controllers
             }
             catch (FlowException)
             {
-                return RedirectToAction("Overview", "Movie");
+                return RedirectToAction("UserMovies", "UserCollections");
             }
             catch (Exception)
             {
@@ -95,7 +94,7 @@ namespace MyMoviesMVC.Controllers
         [AllowAnonymous]
         [Route("login")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LogIn(LoginDTO loginModel)
+        public async Task<IActionResult> LogIn(LoginDTO loginModel, string returnUrl)
         {
             try
             {
@@ -103,9 +102,14 @@ namespace MyMoviesMVC.Controllers
                 {
                     var succeed = await _accountService.LogInUserAsync(loginModel);
 
+                    if (string.IsNullOrEmpty(returnUrl) == false && succeed == true)
+                    {
+                        return Redirect(returnUrl);
+                    }
+
                     if (succeed)
                     {
-                        return RedirectToAction("Overview", "Movie");
+                        return RedirectToAction("UserMovies", "UserCollections");
                     }
 
                     ModelState.AddModelError(string.Empty, "Incorrect e-mail or password.");

@@ -1,0 +1,82 @@
+﻿@model List<MyMoviesMVC.ModelsDTO.UserMovies.UserMovieDTO>;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Overview";
+}
+
+@section Style{
+    <link href="~/css/UserCollections/UserMovies/usermovies.css" rel="stylesheet" type="text/css" />
+}
+
+<div id="movie-navbar">
+    <div class="nav-item" id="all-movies">
+        <p>All movies</p>
+    </div>
+    <div class="nav-item" id="favourite-movies">
+        <p>Favourite</p>
+    </div>
+    <div class="nav-item" id="watched-movies">
+        <p>Watched</p>
+    </div>
+</div>
+
+<div id="all-container" class="container">
+    @if (Model.Count != 0)
+     {
+        @foreach (var movie in Model)
+         {
+            <partial name="_DisplayMoviePartial" model="movie" />
+         }
+     }
+     else
+     {
+        <div class="no-movies-found">
+            <h3>No movies found.Search and add to your watchlist.</h3>
+        </div>
+     }
+</div>
+
+<div id="favourite-container" class="container" style="display:none">
+  @if (Model.Count != 0)
+   {
+       foreach (var movie in Model)
+       {
+           if (movie.IsFavourite)
+           {
+               <partial name="_DisplayMoviePartial" model="movie" />
+           }
+       }
+   }
+   else
+   {
+        <div class="no-movies-found">
+            <h3>No movies found.Search and add to your watchlist.</h3>
+        </div>
+   }
+</div>
+
+<div id="watched-container" class="container" style="display:none">
+   @if (Model.Count != 0)
+    {
+        foreach (var movie in Model)
+        {
+            if (movie.IsWatched)
+            {
+                <partial name="_DisplayMoviePartial" model="movie" />
+            }
+        }
+    }
+    else
+    {
+        <div class="no-movies-found">
+            <h3>No movies found.Search and add to your watchlist.</h3>
+        </div>
+    }
+</div>
+
+
+@section Scripts{
+    <script src="~/js/UserCollections/UserMovies/usermovies.js"></script>
+}

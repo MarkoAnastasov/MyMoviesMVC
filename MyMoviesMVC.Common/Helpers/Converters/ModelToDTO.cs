@@ -1,6 +1,7 @@
 ﻿using MyMoviesMVC.Models;
 using MyMoviesMVC.ModelsDTO.Movie;
 using MyMoviesMVC.ModelsDTO.User;
+using MyMoviesMVC.ModelsDTO.UserMovies;
 using System;
 
 namespace MyMoviesMVC.Common.Helpers.Converters
@@ -9,7 +10,7 @@ namespace MyMoviesMVC.Common.Helpers.Converters
     {
         public static MovieMainDTO MovieToMovieMainDTO(Movie movie)
         {
-            var mainMovieDTO = new MovieMainDTO()
+            return new MovieMainDTO()
             {
                 Id = movie.Id,
                 Title = movie.Title,
@@ -17,21 +18,41 @@ namespace MyMoviesMVC.Common.Helpers.Converters
                 Description = movie.Description,
                 Cover = Convert.ToBase64String(movie.Cover)
             };
+        }
 
-            return mainMovieDTO;
+        public static EditMovieDTO MovieToEditMovieDTO(Movie movie)
+        {
+            return new EditMovieDTO()
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Genre = movie.Genre,
+                Description = movie.Description
+            };
         }
 
         public static UserOverviewDTO UserToUserMainDTO(User user)
         {
-            var userMainDTO = new UserOverviewDTO()
+            return new UserOverviewDTO()
             {
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
                 ProfilePicture = Convert.ToBase64String(user.ProfilePicture)
             };
+        }
 
-            return userMainDTO;
+        public static UserMovieDTO UserMovieToDTO(UserMovies userMovie)
+        {
+            return new UserMovieDTO()
+            {
+                Id = userMovie.Movie.Id,
+                Title = userMovie.Movie.Title,
+                Cover = Convert.ToBase64String(userMovie.Movie.Cover),
+                Description = userMovie.Movie.Description,
+                IsFavourite = userMovie.IsFavourite,
+                IsWatched = userMovie.IsWatched
+            };
         }
     }
 }
