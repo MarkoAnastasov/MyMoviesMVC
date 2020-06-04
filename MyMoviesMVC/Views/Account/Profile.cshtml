@@ -12,9 +12,29 @@
 
 <div id="profile-info">
     <img src="data:image/*;base64,@Model.ProfilePicture" />
-    <h3>@Model.FirstName @Model.LastName</h3>
+    <h3 id="user-fullname">@Model.FirstName @Model.LastName</h3>
+    <div id="remove-account">
+        <div id="remove-acc-form">
+            <h4>Remove Account</h4>
+            <form asp-controller="Account" asp-action="Remove" method="post">
+                <div class="account-inputs">
+                    <label>Password:</label>
+                    <input type="password" name="password" placeholder="Password" maxlength="20" required />
+                </div>
+                <div class="account-button">
+                    <input type="submit" value="Remove" />
+                </div>
+            </form>
+            <div class="alert">
+                @if (ViewData["RemoveErrors"] != null)
+                {
+                    <p>@ViewData["RemoveErrors"].ToString()</p>
+                }
+            </div>
+        </div>
+    </div>
     <div id="update-actions">
-        <div id="profile-presonal-info" class="update-box">
+        <div class="update-box">
             <h4>Personal Info</h4>
             <form asp-controller="Account" asp-action="UpdatePersonalInfo" method="post" enctype="multipart/form-data">
                 <div class="account-inputs">
@@ -37,7 +57,7 @@
                 </div>
             </form>
             <div class="alert">
-                @if (ViewData["UpdateErrors"] != null)
+               @if (ViewData["UpdateErrors"] != null)
                 {
                     foreach (var error in ViewData["UpdateErrors"] as IEnumerable<string>)
                     {
@@ -46,7 +66,7 @@
                 }
             </div>
         </div>
-        <div id="profile-presonal-info" class="update-box">
+        <div class="update-box">
             <h4>Change Password</h4>
             <form asp-controller="Account" asp-action="ChangePassword" method="post">
                 <div class="account-inputs">
@@ -69,7 +89,7 @@
                 </div>
             </form>
             <div class="alert">
-                @if (ViewData["PasswordErrors"] != null)
+               @if (ViewData["PasswordErrors"] != null)
                 {
                     foreach (var passError in ViewData["PasswordErrors"] as IEnumerable<string>)
                     {

@@ -7,6 +7,31 @@
     text-align: center;
 }
 
+#remove-acc-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #529ebb;
+    border-radius: 2px;
+    padding: 10px 70px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: #375763;
+}
+
+#remove-acc-form input:focus {
+    outline: 0;
+}
+
+#remove-acc-form h4 {
+    width: 150px;
+}
+
+#user-fullname {
+    margin-bottom: 15px;
+}
 
 #profile-info img{
     width: 220px;
@@ -34,7 +59,7 @@
     background-color: #375763;
 }
 
-.update-box h4 {
+.update-box h4,#remove-acc-form h4 {
     color: #1a1919;
     margin-bottom: 10px;
 }
@@ -48,7 +73,7 @@
     outline: 0;
 }
 
-.account-button input {
+.account-button input{
     border-radius: 2px;
     padding: 5px 20px;
     background-color: #529ebb;
@@ -103,7 +128,11 @@
         width: 150px;
     }
 
-    .update-box{
+    #remove-acc-form {
+        width: 242px;
+    }
+
+    .update-box {
         padding: 10px 20px;
     }
 }

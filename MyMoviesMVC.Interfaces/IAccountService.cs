@@ -20,6 +20,8 @@ namespace MyMoviesMVC.Interfaces
 
         Task<List<string>> ChangePasswordAsync(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser);
 
+        Task<bool> RemoveAccountAsync(string password, ClaimsPrincipal sessionUser);
+
         Task<bool> AssignUserToAdminAsync(string userId);
 
         Task<bool> UnAssignUserFromAdminAsync(string userId, ClaimsPrincipal sessionUser);

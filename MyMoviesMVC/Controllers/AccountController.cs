@@ -77,6 +77,10 @@ namespace MyMoviesMVC.Controllers
                 {
                     ViewData["PasswordErrors"] = TempData["PasswordChangeErrors"];
                 }
+                else if (TempData["RemoveAccountError"] != null)
+                {
+                    ViewData["RemoveErrors"] = TempData["RemoveAccountError"];
+                }
 
                 return View(userMainDTO);
             }
@@ -228,6 +232,40 @@ namespace MyMoviesMVC.Controllers
             catch (FlowException ex)
             {
                 TempData["PasswordChangeErrors"] = ex.Message;
+
+                return RedirectToAction("Profile");
+            }
+            catch (Exception)
+            {
+                return StatusCode(500);
+            }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Remove(string password)
+        {
+            try
+            {
+                var succeed = await _accountService.RemoveAccountAsync(password, User);
+
+                if (succeed)
+                {
+                    foreach (var cookie in Request.Cookies.Keys)
+                    {
+                        Response.Cookies.Delete(cookie);
+                    }
+
+                    return RedirectToAction("LogIn");
+                }
+
+                TempData["RemoveAccountError"] = "An error has occured!Try again later";
+
+                return RedirectToAction("Profile");
+            }
+            catch (FlowException ex)
+            {
+                TempData["RemoveAccountError"] = ex.Message;
 
                 return RedirectToAction("Profile");
             }

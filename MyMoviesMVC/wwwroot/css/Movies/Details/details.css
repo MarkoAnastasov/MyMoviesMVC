@@ -62,7 +62,7 @@
 }
 
 .user-action-button{
-    width: 100px;
+    width: 120px;
     text-align: center;
 }
 
@@ -114,13 +114,15 @@
         font-size: 20px;
     }
 
-    #user-actions-movie{
-        flex-flow: column;
-        height: 150px;
-    }
-
     #loading-data img {
         width: 30px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #user-actions-movie {
+        flex-flow: column;
+        height: 150px;
     }
 }
 

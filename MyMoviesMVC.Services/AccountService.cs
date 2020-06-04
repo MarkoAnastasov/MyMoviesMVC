@@ -64,24 +64,14 @@ namespace MyMoviesMVC.Services
 
         public async Task<UserOverviewDTO> GetUserByClaimAsync(ClaimsPrincipal sessionUser)
         {
-            var targetUser = await _userManager.GetUserAsync(sessionUser);
-
-            if(targetUser == null)
-            {
-                throw new FlowException();
-            }
+            var targetUser = await GetUserByClaimCheckNullAsync(sessionUser);
 
             return ModelToDTO.UserToUserMainDTO(targetUser);
         }
 
         public async Task<List<string>> UpdatePersonalInfoAsync(UpdatePersonalDTO personalDTO, ClaimsPrincipal sessionUser)
         {
-            var targetUser = await _userManager.GetUserAsync(sessionUser);
-
-            if (targetUser == null)
-            {
-                throw new FlowException("Account user not found!");
-            }
+            var targetUser = await GetUserByClaimCheckNullAsync(sessionUser);
 
             targetUser = await DTOToModel.UpdatePersonalDTOToUser(personalDTO, targetUser);
 
@@ -99,12 +89,7 @@ namespace MyMoviesMVC.Services
 
         public async Task<List<string>> ChangePasswordAsync(ChangePasswordDTO changePasswordDTO, ClaimsPrincipal sessionUser)
         {
-            var targetUser = await _userManager.GetUserAsync(sessionUser);
-
-            if (targetUser == null)
-            {
-                throw new FlowException("Account user not found!");
-            }
+            var targetUser = await GetUserByClaimCheckNullAsync(sessionUser);
 
             var response = await _userManager.ChangePasswordAsync(targetUser, changePasswordDTO.OldPassword, changePasswordDTO.NewPassword);
 
@@ -116,6 +101,27 @@ namespace MyMoviesMVC.Services
             }
 
             return ResponseErrors(response, errorList);
+        }
+
+        public async Task<bool> RemoveAccountAsync(string password,ClaimsPrincipal sessionUser)
+        {
+            var targetUser = await GetUserByClaimCheckNullAsync(sessionUser);
+
+            var correctPassword = await _userManager.CheckPasswordAsync(targetUser, password);
+
+            if(!correctPassword)
+            {
+                throw new FlowException("Incorrect password!");
+            }
+
+            var response = await _userManager.DeleteAsync(targetUser);
+
+            if (response.Succeeded)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public async Task<bool> AssignUserToAdminAsync(string userId)
@@ -175,6 +181,18 @@ namespace MyMoviesMVC.Services
             }
 
             return false;
+        }
+
+        private async Task<User> GetUserByClaimCheckNullAsync(ClaimsPrincipal sessionUser)
+        {
+            var targetUser = await _userManager.GetUserAsync(sessionUser);
+
+            if (targetUser == null)
+            {
+                throw new FlowException("Account user not found!");
+            }
+
+            return targetUser;
         }
 
         private static List<string> ResponseErrors(IdentityResult response, List<string> errorList)
