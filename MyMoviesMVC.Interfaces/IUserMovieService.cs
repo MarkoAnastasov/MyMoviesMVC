@@ -1,11 +1,11 @@
-﻿using MyMoviesMVC.ModelsDTO.UserMovies;
+﻿using MyMoviesMVC.ModelsDTO.UserMovie;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Interfaces
 {
-    public interface IUserCollectionsService
+    public interface IUserMovieService
     {
         Task<List<UserMovieDTO>> GetUserMoviesAsync(ClaimsPrincipal sessionUser);
 

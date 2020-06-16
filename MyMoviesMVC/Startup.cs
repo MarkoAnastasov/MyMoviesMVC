@@ -34,11 +34,11 @@ namespace MyMoviesMVC
             services.AddIdentity<User, UserRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 7;
-                options.Password.RequireUppercase = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = Convert.ToBoolean(Configuration["IdentityPassword:RequireDigit"]);
+                options.Password.RequiredLength = Convert.ToInt32(Configuration["IdentityPassword:RequiredLength"]);
+                options.Password.RequireUppercase = Convert.ToBoolean(Configuration["IdentityPassword:RequireUppercase"]);
+                options.Password.RequireLowercase = Convert.ToBoolean(Configuration["IdentityPassword:RequireLowercase"]);
+                options.Password.RequireNonAlphanumeric = Convert.ToBoolean(Configuration["IdentityPassword:RequireNonAlphanumeric"]);
             }).AddEntityFrameworkStores<mymoviesmvcContext>();
 
             services.ConfigureApplicationCookie(options => options.LoginPath = "/login");
@@ -51,9 +51,10 @@ namespace MyMoviesMVC
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IMovieRepository, MovieRepository>();
             services.AddScoped<IMovieService, MovieService>();
-            services.AddScoped<IUserCollectionsRepository, UserCollectionsRepository>();
-            services.AddScoped<IUserCollectionsService, UserCollectionsService>();
-
+            services.AddScoped<IUserMovieRepository, UserMovieRepository>();
+            services.AddScoped<IUserMovieService, UserMovieService>();
+            services.AddScoped<IMovieCommentRepository, MovieCommentRepository>();
+            services.AddScoped<IMovieCommentService, MovieCommentService>();
 
             services.AddMvc(config =>
             {
@@ -73,13 +74,7 @@ namespace MyMoviesMVC
             else
             {
                 app.UseExceptionHandler("/StatusCode/GlobalError");
-
             }
-
-            var configuration = new ConfigurationBuilder()
-                            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                            .AddJsonFile("appsettings.json")
-                            .Build();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
@@ -93,7 +88,7 @@ namespace MyMoviesMVC
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=UserCollections}/{action=UserMovies}");
+                    template: "{controller=UserMovie}/{action=UserMovies}");
             });
         }
     }

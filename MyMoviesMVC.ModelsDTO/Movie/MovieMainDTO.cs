@@ -1,7 +1,6 @@
 ﻿using MyMoviesMVC.Models.Enums;
-using System;
+using MyMoviesMVC.ModelsDTO.MovieComment;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MyMoviesMVC.ModelsDTO.Movie
 {
@@ -16,5 +15,9 @@ namespace MyMoviesMVC.ModelsDTO.Movie
         public string Description { get; set; }
 
         public virtual Genre Genre { get; set; }
+
+        public int Views { get; set; }
+
+        public List<MovieCommentMainDTO> Comments { get; set; }
     }
 }

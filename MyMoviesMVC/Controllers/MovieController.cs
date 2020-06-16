@@ -25,11 +25,20 @@ namespace MyMoviesMVC.Controllers
             {
                 var movieMainDTO = await _movieService.GetTargetMovieAsync(id);
 
+                if(TempData["AddCommentNote"] != null)
+                {
+                    ViewData["AddNote"] = TempData["AddCommentNote"];
+                }
+                else if (TempData["AddCommentError"] != null)
+                {
+                    ViewData["AddError"] = TempData["AddCommentError"];
+                }
+
                 return View(movieMainDTO);
             }
             catch (FlowException)
             {
-                return RedirectToAction("UserMovies", "UserCollections");
+                return RedirectToAction("UserMovies", "UserMovie");
             }
             catch (Exception)
             {
@@ -58,7 +67,7 @@ namespace MyMoviesMVC.Controllers
             }
             catch (FlowException)
             {
-                return RedirectToAction("UserMovies", "UserCollections");
+                return RedirectToAction("UserMovies", "UserMovie");
             }
             catch (Exception)
             {
@@ -75,11 +84,11 @@ namespace MyMoviesMVC.Controllers
             {
                 await _movieService.RemoveMovieAsync(id);
 
-                return RedirectToAction("UserMovies", "UserCollections");
+                return RedirectToAction("UserMovies", "UserMovie");
             }
             catch (FlowException)
             {
-                return RedirectToAction("UserMovies", "UserCollections");
+                return RedirectToAction("UserMovies", "UserMovie");
             }
             catch (Exception)
             {

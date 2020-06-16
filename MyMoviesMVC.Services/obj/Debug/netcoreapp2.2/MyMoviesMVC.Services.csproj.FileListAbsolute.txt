@@ -32,9 +32,9 @@ C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\bin\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.pdb
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.pdb
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.csprojAssemblyReference.cache
-C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.AssemblyInfo.cs
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.csproj.CopyComplete
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.dll
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Services\obj\Debug\netcoreapp2.2\MyMoviesMVC.Services.pdb

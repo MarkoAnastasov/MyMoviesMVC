@@ -1,7 +1,7 @@
 ﻿using MyMoviesMVC.Models;
 using MyMoviesMVC.ModelsDTO.Account;
 using MyMoviesMVC.ModelsDTO.Movie;
-using MyMoviesMVC.ModelsDTO.UserMovies;
+using MyMoviesMVC.ModelsDTO.MovieComment;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Common.Helpers.Converters
@@ -59,14 +59,24 @@ namespace MyMoviesMVC.Common.Helpers.Converters
             return user;
         }
 
-        public static UserMovies AddUserMovieToUserMovie(int movieId, int userId)
+        public static UserMovie AddUserMovieToUserMovie(int movieId, int userId)
         {
-            return new UserMovies()
+            return new UserMovie()
             {
                 UserId = userId,
                 MovieId = movieId,
                 IsFavourite = false,
                 IsWatched = false
+            };
+        }
+
+        public static MovieComment AddMovieCommentDTOToModel(AddMovieCommentDTO addMovieCommentDTO, int userId)
+        {
+            return new MovieComment()
+            {
+                Comment = addMovieCommentDTO.Comment,
+                UserId = userId,
+                MovieId = addMovieCommentDTO.MovieId
             };
         }
     }

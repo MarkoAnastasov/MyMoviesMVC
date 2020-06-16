@@ -1,8 +1,10 @@
 ﻿using MyMoviesMVC.Models;
 using MyMoviesMVC.ModelsDTO.Movie;
+using MyMoviesMVC.ModelsDTO.MovieComment;
 using MyMoviesMVC.ModelsDTO.User;
-using MyMoviesMVC.ModelsDTO.UserMovies;
+using MyMoviesMVC.ModelsDTO.UserMovie;
 using System;
+using System.Linq;
 
 namespace MyMoviesMVC.Common.Helpers.Converters
 {
@@ -15,8 +17,10 @@ namespace MyMoviesMVC.Common.Helpers.Converters
                 Id = movie.Id,
                 Title = movie.Title,
                 Genre = movie.Genre,
+                Views = movie.Views,
                 Description = movie.Description,
-                Cover = Convert.ToBase64String(movie.Cover)
+                Cover = Convert.ToBase64String(movie.Cover),
+                Comments = movie.MovieComments.Select(x => MovieCommentToMainDTO(x)).ToList()
             };
         }
 
@@ -31,10 +35,22 @@ namespace MyMoviesMVC.Common.Helpers.Converters
             };
         }
 
+        public static SearchMovieDTO MovieToSearchMovieDTO(Movie movie)
+        {
+            return new SearchMovieDTO()
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Description = movie.Description,
+                Cover = Convert.ToBase64String(movie.Cover)
+            };
+        }
+
         public static UserOverviewDTO UserToUserMainDTO(User user)
         {
             return new UserOverviewDTO()
             {
+                Id = user.Id,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
@@ -42,7 +58,7 @@ namespace MyMoviesMVC.Common.Helpers.Converters
             };
         }
 
-        public static UserMovieDTO UserMovieToDTO(UserMovies userMovie)
+        public static UserMovieDTO UserMovieToDTO(UserMovie userMovie)
         {
             return new UserMovieDTO()
             {
@@ -52,6 +68,27 @@ namespace MyMoviesMVC.Common.Helpers.Converters
                 Description = userMovie.Movie.Description,
                 IsFavourite = userMovie.IsFavourite,
                 IsWatched = userMovie.IsWatched
+            };
+        }
+
+        public static MovieCommentMainDTO MovieCommentToMainDTO(MovieComment movieComment)
+        {
+            return new MovieCommentMainDTO()
+            {
+                Id = movieComment.Id,
+                Comment = movieComment.Comment,
+                User = UserToUserMainDTO(movieComment.User)
+            };
+        }
+
+        public static ApprovalOverviewDTO MovieCommentToApprovalDTO(MovieComment movieComment)
+        {
+            return new ApprovalOverviewDTO()
+            {
+                Id = movieComment.Id,
+                UserId = movieComment.UserId,
+                UserFullName = movieComment.User.FirstName + ' ' + movieComment.User.LastName,
+                Comment = movieComment.Comment
             };
         }
     }

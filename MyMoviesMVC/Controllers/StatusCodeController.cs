@@ -15,7 +15,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (statusCode != 500)
                 {
-                    return RedirectToAction("UserMovies", "UserCollections");
+                    return RedirectToAction("UserMovies", "UserMovie");
                 }
 
                 return View();

@@ -9,7 +9,7 @@ namespace MyMoviesMVC.Interfaces
     {
         Task<MovieMainDTO> GetTargetMovieAsync(int id);
 
-        Task<List<MovieMainDTO>> SearchMoviesByTitleAsync(string title);
+        Task<List<SearchMovieDTO>> SearchMoviesByTitleAsync(string title);
 
         Task AddMovieAsync(AddMovieDTO movieDTO);
 

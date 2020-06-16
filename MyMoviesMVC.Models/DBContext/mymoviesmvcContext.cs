@@ -3,15 +3,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MyMoviesMVC.Models
 {
-    public partial class mymoviesmvcContext : IdentityDbContext<User,UserRole,int>
+    public class mymoviesmvcContext : IdentityDbContext<User,UserRole,int>
     {
         public mymoviesmvcContext(DbContextOptions<mymoviesmvcContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<UserMovies> UserMovies { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<UserMovie> UserMovies { get; set; }
+        public virtual DbSet<MovieComment> MovieComments { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

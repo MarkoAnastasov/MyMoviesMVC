@@ -121,9 +121,36 @@ namespace MyMoviesMVC.Models.Migrations
                         .IsRequired()
                         .HasMaxLength(30);
 
+                    b.Property<int>("Views");
+
                     b.HasKey("Id");
 
                     b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("MyMoviesMVC.Models.MovieComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasMaxLength(400);
+
+                    b.Property<bool>("IsVerified");
+
+                    b.Property<int>("MovieId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MovieComments");
                 });
 
             modelBuilder.Entity("MyMoviesMVC.Models.User", b =>
@@ -179,7 +206,7 @@ namespace MyMoviesMVC.Models.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("MyMoviesMVC.Models.UserMovies", b =>
+            modelBuilder.Entity("MyMoviesMVC.Models.UserMovie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -272,7 +299,20 @@ namespace MyMoviesMVC.Models.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("MyMoviesMVC.Models.UserMovies", b =>
+            modelBuilder.Entity("MyMoviesMVC.Models.MovieComment", b =>
+                {
+                    b.HasOne("MyMoviesMVC.Models.Movie", "Movie")
+                        .WithMany("MovieComments")
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("MyMoviesMVC.Models.User", "User")
+                        .WithMany("MovieComments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("MyMoviesMVC.Models.UserMovie", b =>
                 {
                     b.HasOne("MyMoviesMVC.Models.Movie", "Movie")
                         .WithMany("UserMovies")

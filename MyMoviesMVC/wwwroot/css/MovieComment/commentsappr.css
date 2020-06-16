@@ -1,0 +1,44 @@
+﻿#content {
+    color: #529ebb;
+    padding-bottom: 50px;
+}
+
+#page-title{
+    text-align: center;
+}
+
+#comments-container {
+    display: flex;
+    flex-flow: column;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #1e1e1e;
+    border-radius: 2px;
+    padding: 10px;
+    word-break: break-word;
+}
+
+.movie-comment{
+    border-bottom: 1px solid #529ebb;
+    padding: 10px;
+}
+
+.approval-actions {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+.approval-actions img {
+    width: 30px;
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 750px)
+{
+    #comments-container{
+        width: 250px;
+    }
+}

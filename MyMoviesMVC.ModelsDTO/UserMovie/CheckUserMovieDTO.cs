@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Permissions;
-using System.Text;
-
-namespace MyMoviesMVC.ModelsDTO.UserMovies
+﻿namespace MyMoviesMVC.ModelsDTO.UserMovie
 {
     public class CheckUserMovieDTO
     {

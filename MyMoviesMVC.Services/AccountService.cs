@@ -31,6 +31,10 @@ namespace MyMoviesMVC.Services
                 return false;
             }
 
+            var idClaim = new Claim("Id", user.Id.ToString());
+
+            await _userManager.AddClaimAsync(user, idClaim);
+
             var response = await _signInManager.PasswordSignInAsync(user,loginModel.Password, loginModel.StayLoggedIn, false);
 
             if (response.Succeeded)

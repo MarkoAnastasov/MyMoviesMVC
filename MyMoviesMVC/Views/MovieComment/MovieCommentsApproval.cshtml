@@ -1,0 +1,39 @@
+﻿@model List<MyMoviesMVC.ModelsDTO.MovieComment.ApprovalOverviewDTO>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Comments Approval";
+}
+
+@section Style {
+    <link href="~/css/MovieComment/commentsappr.css" rel="stylesheet" type="text/css" />
+}
+
+<div id="page-title">
+    <h4>Comments for approval</h4>
+</div>
+
+<div id="comments-container">
+   @if (Model.Count != 0)
+    {
+       @foreach (var comment in Model)
+        {
+            <div class="movie-comment">
+                <div class="user-info">
+                    <p><b>User ID: </b>@comment.UserId</p>
+                    <p><b>Full Name: </b>@comment.UserFullName</p>
+                </div>
+                <p><b>Comment: </b>@comment.Comment</p>
+                <div class="approval-actions">
+                    <a asp-controller="MovieComment" asp-action="Approve" asp-route-commentId="@comment.Id"><img src="~/images/accept.png" alt="accept" /></a>
+                    <a asp-controller="MovieComment" asp-action="Disapprove" asp-route-commentId="@comment.Id"><img src="~/images/refuse.png" alt="refuse" /></a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+       <p>No comments for approval.</p>
+    }
+</div>

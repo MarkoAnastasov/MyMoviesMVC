@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyMoviesMVC.Common.Exceptions;
 using MyMoviesMVC.Interfaces;
-using MyMoviesMVC.ModelsDTO.UserMovies;
+using MyMoviesMVC.ModelsDTO.UserMovie;
 using System;
 using System.Threading.Tasks;
 
 namespace MyMoviesMVC.Controllers
 {
-    public class UserCollectionsController : Controller
+    public class UserMovieController : Controller
     {
-        private readonly IUserCollectionsService _userCollectionsService;
+        private readonly IUserMovieService _userMovieService;
 
-        public UserCollectionsController(IUserCollectionsService userCollectionsService)
+        public UserMovieController(IUserMovieService userMovieService)
         {
-            _userCollectionsService = userCollectionsService;
+            _userMovieService = userMovieService;
         }
 
         [HttpGet]
@@ -21,7 +21,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                var userMoviesDTO = await _userCollectionsService.GetUserMoviesAsync(User);
+                var userMoviesDTO = await _userMovieService.GetUserMoviesAsync(User);
 
                 return View(userMoviesDTO);
             }
@@ -37,7 +37,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                var result = await _userCollectionsService.CheckIfUserMovieAsync(movieId,User);
+                var result = await _userMovieService.CheckIfUserMovieAsync(movieId,User);
 
                 return Ok(result);
             }
@@ -57,7 +57,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                await _userCollectionsService.AddUserMovieAsync(manageUserMovieDTO.MovieId, User);
+                await _userMovieService.AddUserMovieAsync(manageUserMovieDTO.MovieId, User);
 
                 return Ok();
             }
@@ -77,7 +77,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                await _userCollectionsService.ManageUserMovieAsync(manageUserMovieDTO, User);
+                await _userMovieService.ManageUserMovieAsync(manageUserMovieDTO, User);
 
                 return Ok();
             }
@@ -97,7 +97,7 @@ namespace MyMoviesMVC.Controllers
         {
             try
             {
-                await _userCollectionsService.RemoveUserMovieAsync(manageUserMovieDTO.MovieId, User);
+                await _userMovieService.RemoveUserMovieAsync(manageUserMovieDTO.MovieId, User);
 
                 return Ok();
             }

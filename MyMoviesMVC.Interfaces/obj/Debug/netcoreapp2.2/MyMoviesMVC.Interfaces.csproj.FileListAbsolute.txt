@@ -20,9 +20,9 @@ C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\bin\Debug\netcoreapp2.2\MyMoviesMVC.ModelsDTO.pdb
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\bin\Debug\netcoreapp2.2\MyMoviesMVC.Models.pdb
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.csprojAssemblyReference.cache
-C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.AssemblyInfo.cs
+C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.csproj.CopyComplete
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.dll
 C:\Users\User\Desktop\Marko\Code Academy\MyMoviesMVCgit\MyMoviesMVC\MyMoviesMVC.Interfaces\obj\Debug\netcoreapp2.2\MyMoviesMVC.Interfaces.pdb

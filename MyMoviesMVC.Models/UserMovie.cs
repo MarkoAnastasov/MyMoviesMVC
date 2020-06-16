@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyMoviesMVC.Models
 {
-    public class UserMovies
+    public class UserMovie
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

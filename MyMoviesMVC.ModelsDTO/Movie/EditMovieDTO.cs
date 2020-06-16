@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using MyMoviesMVC.Models.Enums;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Permissions;
 
 namespace MyMoviesMVC.ModelsDTO.Movie
 {

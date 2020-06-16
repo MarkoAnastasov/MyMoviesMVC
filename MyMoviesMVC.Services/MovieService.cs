@@ -20,12 +20,28 @@ namespace MyMoviesMVC.Services
 
         public async Task<MovieMainDTO> GetTargetMovieAsync(int id)
         {
-            var targetMovie = await GetMovieByIdAndCheckNullAsync(id);
+            var targetMovie = await _movieRepository.GetFirstWhereCommentsIncludedAsync(x => x.Id == id);
+
+            if (targetMovie == null)
+            {
+                throw new FlowException("Movie not found!");
+            }
+
+            targetMovie.Views += 1;
+
+            _movieRepository.Update(targetMovie);
+            await _movieRepository.SaveEntitiesAsync();
+
+            var filteredList = new List<MovieComment>();
+
+            filteredList = targetMovie.MovieComments.Where(x => x.IsVerified == true).ToList();
+
+            targetMovie.MovieComments = filteredList;
 
             return ModelToDTO.MovieToMovieMainDTO(targetMovie);
         }
 
-        public async Task<List<MovieMainDTO>> SearchMoviesByTitleAsync(string title)
+        public async Task<List<SearchMovieDTO>> SearchMoviesByTitleAsync(string title)
         {
             if (string.IsNullOrEmpty(title))
             {
@@ -34,12 +50,7 @@ namespace MyMoviesMVC.Services
 
             var targetMovies = await _movieRepository.GetAllWhereAsync(x => x.Title.ToUpper().Contains(title.Trim().ToUpper()));
 
-            if(targetMovies == null)
-            {
-                return new List<MovieMainDTO>();
-            }
-
-            return targetMovies.Select(x => ModelToDTO.MovieToMovieMainDTO(x)).ToList();
+            return targetMovies.Select(x => ModelToDTO.MovieToSearchMovieDTO(x)).ToList();
         }
 
         public async Task AddMovieAsync(AddMovieDTO addMovieDTO)

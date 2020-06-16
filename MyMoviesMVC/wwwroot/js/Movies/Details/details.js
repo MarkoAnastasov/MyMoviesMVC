@@ -126,6 +126,18 @@ function actionUserMovie(button,path,actionName,movieIdInt) {
     })
 }
 
+function checkMovieIdOnSubmit() {
+    var movieId = parseInt($("#movie-id-form").val());
+    $("#add-comment-form").submit(function () {
+        if (parseInt($("#movie-id-form").val()) != movieId) {
+            return false;
+        }
+
+        return true;
+    })
+}
+
 $(document).ready(function () {
+    checkMovieIdOnSubmit();
     checkIfUserMovie();
 })

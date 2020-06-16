@@ -5,11 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyMoviesMVC.Models
 {
-    public partial class Movie
+    public class Movie
     {
         public Movie()
         {
-            UserMovies = new List<UserMovies>();
+            UserMovies = new List<UserMovie>();
         }
 
         [Key]
@@ -30,7 +30,10 @@ namespace MyMoviesMVC.Models
         [Required]
         public virtual Genre Genre { get; set; }
 
-        public virtual List<UserMovies> UserMovies { get; set; }
+        [Required]
+        public int Views { get; set; }
 
+        public virtual List<UserMovie> UserMovies { get; set; }
+        public virtual List<MovieComment> MovieComments { get; set; }
     }
 }

@@ -20,12 +20,16 @@
         <p>@Model.Genre</p>
     </div>
     <p id="movie-description">@Model.Description</p>
+    <div id="movie-views">
+        <img src="~/images/views.png" alt="views" />
+        <p>@Model.Views.ToString("N0")</p>
+    </div>
     @if (User.IsInRole("admin"))
     {
         <div id="admin-action">
             <h4>Admin section</h4>
             <div id="admin-section">
-                <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+                <a asp-controller="Movie" asp-action="Edit" asp-route-id="@Model.Id">Modify</a>
                 <a asp-controller="Movie" asp-action="Remove" asp-route-id="@Model.Id" onclick="return confirm(`Do you want to remove this movie?`)">Remove</a>
             </div>
         </div>
@@ -41,6 +45,61 @@
         </div>
         <div id="data-errors">
 
+        </div>
+        <div id="view-comments">
+            <p><b>Comments:</b></p>
+        </div>
+        <div id="comments-section">
+           @if (Model.Comments.Count == 0)
+            {
+                <p style="margin-top: 10px; color: #ff6a00;">Nothing to show.</p>
+            }
+            else
+            {
+               @foreach (var comment in Model.Comments)
+                {
+                    <div class="comment-wrapper">
+                        <div class="movie-comment">
+                        <div class="user-info">
+                            <img src="data:image*;base64,@comment.User.ProfilePicture" alt="user" />
+                            <p class="comment-user-fullname"><b>@comment.User.FirstName @comment.User.LastName:</b></p>
+                        </div>
+                       @if (User.IsInRole("admin") && Convert.ToInt32(User.FindFirst("Id").Value) == comment.User.Id)
+                        {
+                           <a class="remove-comment-link" asp-controller="MovieComment" asp-action="Remove" asp-route-commentId="@comment.Id">
+                               <div class="remove-comment">
+                                    <span>&times;</span>
+                               </div>
+                           </a>
+                        }
+                        </div>
+                        <div class="comment">
+                           <p>@comment.Comment</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+        <div id="add-comment">
+            <form id="add-comment-form" asp-controller="MovieComment" asp-action="Add" method="post">
+                <input id="movie-id-form" name="MovieId" type="hidden" value="@Model.Id" />
+                <div class="form-inputs">
+                    <textarea id="comment-field" name="Comment" placeholder="Add Comment" rows="5" required maxlength="400"></textarea>
+                </div>
+                <div>
+                    <input id="post-comment" type="submit" value="Comment" />
+                </div>
+            </form>
+            <div id="add-movie-alert">
+               @if (ViewData["AddNote"] != null)
+                {
+                    <p style="color:forestgreen;">@ViewData["AddNote"].ToString()</p>
+                }
+                else if (ViewData["AddError"] != null)
+                {
+                    <p style="color:red;">@ViewData["AddError"].ToString()</p>
+                }
+            </div>
         </div>
     </div>
 </div>

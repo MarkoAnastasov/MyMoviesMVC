@@ -1,4 +1,4 @@
-﻿namespace MyMoviesMVC.ModelsDTO.UserMovies
+﻿namespace MyMoviesMVC.ModelsDTO.UserMovie
 {
     public class ManageUserMovieDTO
     {

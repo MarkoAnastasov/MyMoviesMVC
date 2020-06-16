@@ -28,7 +28,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    return RedirectToAction("UserMovies", "UserCollections");
+                    return RedirectToAction("UserMovies", "UserMovie");
                 }
 
                 return View();
@@ -48,7 +48,7 @@ namespace MyMoviesMVC.Controllers
             {
                 if (User.Identity.IsAuthenticated)
                 {
-                    return RedirectToAction("UserMovies", "UserCollections");
+                    return RedirectToAction("UserMovies", "UserMovie");
                 }
 
                 return View();
@@ -86,7 +86,7 @@ namespace MyMoviesMVC.Controllers
             }
             catch (FlowException)
             {
-                return RedirectToAction("UserMovies", "UserCollections");
+                return RedirectToAction("UserMovies", "UserMovie");
             }
             catch (Exception)
             {
@@ -113,7 +113,7 @@ namespace MyMoviesMVC.Controllers
 
                     if (succeed)
                     {
-                        return RedirectToAction("UserMovies", "UserCollections");
+                        return RedirectToAction("UserMovies", "UserMovie");
                     }
 
                     ModelState.AddModelError(string.Empty, "Incorrect e-mail or password.");

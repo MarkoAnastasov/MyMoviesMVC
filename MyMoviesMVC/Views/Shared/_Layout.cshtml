@@ -20,7 +20,7 @@
 <body>
     <div id="header">
         <div id="header-width">
-            <a asp-controller="UserCollections" asp-action="UserMovies" class="logo-link">
+            <a asp-controller="UserMovie" asp-action="UserMovies" class="logo-link">
                 <div id="logo">
                     <img src="~/images/logo.png" alt="logo" />
                     <p id="company">My Movies</p>
@@ -39,7 +39,7 @@
                 </div>
                 <div id="toggle-full-menu">
                     <div id="user-actions-full">
-                        <a asp-controller="UserCollections" asp-action="UserMovies" class="header-links" id="home">Home</a>
+                        <a asp-controller="UserMovie" asp-action="UserMovies" class="header-links" id="home">Home</a>
                         <a asp-controller="Account" asp-action="Profile" class="header-links" id="profile">Profile</a>
                         @if (User.IsInRole("admin"))
                          {
